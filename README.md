@@ -60,12 +60,14 @@ use Psr\Http\Server\RequestHandlerInterface;
  */
 class ResourceUpdate implements MiddlewareInterface
 {
-    public function process(ServerRequestInterface $request, RequestHandlerInterface $handler) : ResponseInterface
-    {
+    public function process(
+        ServerRequestInterface $request,
+        RequestHandlerInterface $handler
+    ) : ResponseInterface {
         $response = $handler->handle($request);
         $resourceId = $request->getAttribute('id');
 
-        // updating the resource...
+        // some code...
 
         return $response;
     }
