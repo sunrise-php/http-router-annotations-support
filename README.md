@@ -4,7 +4,7 @@
 [![Build Status](https://api.travis-ci.com/sunrise-php/http-router-annotations-support.svg?branch=master)](https://travis-ci.com/sunrise-php/http-router-annotations-support)
 [![CodeFactor](https://www.codefactor.io/repository/github/sunrise-php/http-router-annotations-support/badge)](https://www.codefactor.io/repository/github/sunrise-php/http-router-annotations-support)
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/sunrise-php/http-router-annotations-support/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/sunrise-php/http-router-annotations-support/?branch=master)
-[![Code Intelligence Status](https://scrutinizer-ci.com/g/sunrise-php/http-router-annotations-support/badges/code-intelligence.svg?b=master)](https://scrutinizer-ci.com/code-intelligence)
+[![Code Coverage](https://scrutinizer-ci.com/g/sunrise-php/http-router-annotations-support/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/sunrise-php/http-router-annotations-support/?branch=master)
 [![Latest Stable Version](https://poser.pugx.org/sunrise/http-router-annotations-support/v/stable?format=flat)](https://packagist.org/packages/sunrise/http-router-annotations-support)
 [![Total Downloads](https://poser.pugx.org/sunrise/http-router-annotations-support/downloads?format=flat)](https://packagist.org/packages/sunrise/http-router-annotations-support)
 [![License](https://poser.pugx.org/sunrise/http-router-annotations-support/license?format=flat)](https://packagist.org/packages/sunrise/http-router-annotations-support)

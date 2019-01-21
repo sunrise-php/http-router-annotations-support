@@ -1,28 +1,33 @@
 {
-	"name": "sunrise/http-router-annotations-support",
-	"description": "Annotations support for Sunrise HTTP Router",
-	"keywords": ["fenric", "sunrise", "http-router", "annotations"],
-	"homepage": "https://github.com/sunrise-php/http-router-annotations-support",
-	"license": "MIT",
-	"authors": [{
-		"name": "Anatoly Fenric",
-		"email": "anatoly@fenric.ru",
-		"homepage": "https://anatoly.fenric.ru/"
-	}],
-	"require": {
-		"php": "^7.1",
-		"doctrine/annotations": "^1.6",
-		"sunrise/http-router": "^1.0"
-	},
-	"require-dev": {
-		"phpunit/phpunit": "7.5.1",
-		"psr/http-message": "^1.0",
-		"psr/http-server-handler": "^1.0",
-		"psr/http-server-middleware": "^1.0"
-	},
-	"autoload": {
-		"psr-4": {
-			"Sunrise\\Http\\Router\\": "src/"
-		}
-	}
+    "name": "sunrise/http-router-annotations-support",
+    "description": "Annotations support for Sunrise HTTP Router",
+    "keywords": ["fenric", "sunrise", "http-router", "annotations"],
+    "homepage": "https://github.com/sunrise-php/http-router-annotations-support",
+    "license": "MIT",
+    "authors": [{
+        "name": "Anatoly Fenric",
+        "email": "anatoly@fenric.ru",
+        "homepage": "https://anatoly.fenric.ru/"
+    }],
+    "require": {
+        "php": "^7.1",
+        "doctrine/annotations": "^1.6",
+        "sunrise/http-router": "^1.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "7.5.1",
+        "psr/http-message": "^1.0",
+        "psr/http-server-handler": "^1.0",
+        "psr/http-server-middleware": "^1.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Sunrise\\Http\\Router\\": "src/"
+        }
+    },
+    "scripts": {
+        "test": [
+            "phpunit --colors=always --coverage-text"
+        ]
+    }
 }
