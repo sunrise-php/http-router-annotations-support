@@ -34,6 +34,11 @@ final class Route
 	public $methods;
 
 	/**
+	 * @var int
+	 */
+	public $priority = 0;
+
+	/**
 	 * @var array
 	 */
 	public $patterns = [];
@@ -63,6 +68,9 @@ final class Route
 		}
 		if (empty($values['methods']) || ! \is_array($values['methods'])) {
 			throw new \InvalidArgumentException('@Route.methods must be not an empty array.');
+		}
+		if (isset($values['priority']) && ! \is_int($values['priority'])) {
+			throw new \InvalidArgumentException('@Route.priority must be an integer.');
 		}
 		if (isset($values['before']) && ! \is_array($values['before'])) {
 			throw new \InvalidArgumentException('@Route.before must be an array.');
@@ -106,6 +114,10 @@ final class Route
 
 		$this->id = $values['id'];
 		$this->methods = $values['methods'];
+
+		if (isset($values['priority'])) {
+			$this->priority = $values['priority'];
+		}
 
 		if (isset($values['before'])) {
 			$this->before = $values['before'];

@@ -27,32 +27,25 @@ class AnnotationRouteLoader extends AbstractAnnotationLoader
 	{
 		$annotations = $this->findAnnotations($destination, 'Sunrise\Http\Router\Annotation\Route');
 		$routeCollection = new RouteCollection();
+		$routeStack = new \SplPriorityQueue();
 
 		foreach ($annotations as $annotation) {
-			$route = new Route(
-				$annotation->id,
-				$annotation->path,
-				$annotation->methods
-			);
+			$route = new Route($annotation->id, $annotation->path, $annotation->methods);
 
 			foreach ($annotation->patterns as $name => $value) {
 				$route->addPattern($name, $value);
 			}
 
-			$middlewareStack = \array_merge(
-				$annotation->before,
-				[$annotation->source->getName()],
-				$annotation->after
-			);
+			$middlewareStack = \array_merge($annotation->before, [$annotation->source->getName()], $annotation->after);
 
 			foreach ($middlewareStack as $middleware) {
-				$route->addMiddleware(
-					$middlewareInitializer ?
-					$middlewareInitializer($middleware) :
-					new $middleware
-				);
+				$route->addMiddleware($middlewareInitializer ? $middlewareInitializer($middleware) : new $middleware);
 			}
 
+			$routeStack->insert($route, $annotation->priority);
+		}
+
+		foreach ($routeStack as $route) {
 			$routeCollection->addRoute($route);
 		}
 
